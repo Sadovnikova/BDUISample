@@ -3,13 +3,16 @@ package com.example.bduisample.bdui
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Outline
-import android.graphics.drawable.BitmapDrawable
 import android.text.InputType
 import android.view.ContextThemeWrapper
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
-import android.widget.*
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Space
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
 import coil.load
@@ -36,8 +39,16 @@ class BDUIRenderer(
         is Node.ViewNode.Button -> button(node)
         is Node.ViewNode.TextField -> textField(node)
         is Node.ViewNode.Action -> TODO()
-        is Node.ViewNode.ProductCard -> TODO()
+        is Node.ViewNode.ProductCard -> productCard(node)
         is Node.ViewNode.Spacer -> spacer(node)
+    }
+
+    private fun productCard(node: Node.ViewNode.ProductCard): View {
+
+        //ВОТ СЮДА ВОТКНУТЬ КОД ИЗ ДЖЕПЕТЕ КОТОРЫЙ СВЕРСТАЕТ КАРТОЧКИ
+
+        Toast.makeText(context, "Надо чтобы джепете нашкодил витрину", Toast.LENGTH_SHORT).show() /// УДАЛИТЬ СТРОЧКУ
+        return View(context) // УДАЛИТЬ
     }
 
     private fun vertical(node: Node.ViewNode.Column): View {
@@ -46,8 +57,12 @@ class BDUIRenderer(
             node.padding?.let { setPadding(dp(it), dp(it), dp(it), dp(it)) }
         }
         node.children.forEachIndexed { i, child ->
-            val view = wrapCardIfNeeded(renderView(child), node.card)
-            ll.addView(view)
+            if (child is Node.ViewNode.Image) {
+                ll.addView(renderView(child))
+            } else {
+                val view = wrapCardIfNeeded(renderView(child), node.card)
+                ll.addView(view)
+            }
             if (node.spacing != null && i != node.children.lastIndex) addSpace(ll, node.spacing, true)
         }
         return ll
@@ -90,18 +105,18 @@ class BDUIRenderer(
         imageView.load(node.url) {
             listener(
                 onSuccess = { _, result ->
-                    val bmp = (result.drawable as? BitmapDrawable)?.bitmap
-                    if (bmp != null) {
-                        val width = bmp.width
-                        val height = bmp.height
+//                    val bmp = (result.drawable as? BitmapDrawable)?.bitmap
+//                    if (bmp != null) {
+//                        val width = bmp.width
+//                        val height = bmp.height
                         // Обновляем layoutParams на реальные размеры
-                        imageView.post {
-                            val params = imageView.layoutParams
-                            params.width = width
-                            params.height = height
-                            imageView.layoutParams = params
-                        }
-                    }
+//                        imageView.post {
+//                            val params = imageView.layoutParams
+//                            params.width = node.widthDp ?: 0
+//                            params.height = node.heightDp ?: 0
+//                            imageView.layoutParams = params
+//                        }
+//                    }
                 },
                 onError = { _, _ ->
                     // fallback — если не удалось загрузить
@@ -118,7 +133,7 @@ class BDUIRenderer(
         // Добавляем скругление углов
         imageView.outlineProvider = object : ViewOutlineProvider() {
             override fun getOutline(view: View, outline: Outline) {
-                outline.setRoundRect(0, 0, view.width, view.height, dpF(16f))
+                outline.setRoundRect(0, 0, view.width, view.height, dpF(999f))
             }
         }
 

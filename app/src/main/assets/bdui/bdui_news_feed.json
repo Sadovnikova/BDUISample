@@ -13,7 +13,7 @@
         "children": [
           {
             "type": "image",
-            "url": "https://picsum.photos/seed/n1/800/400",
+            "url": "https://i.pravatar.cc/200?img=47",
             "heightDp": 160,
             "contentDescription": "n1"
           },
@@ -35,7 +35,7 @@
         "children": [
           {
             "type": "image",
-            "url": "https://picsum.photos/seed/n2/800/400",
+            "url": "https://i.pravatar.cc/200?img=47",
             "heightDp": 160,
             "contentDescription": "n2"
           },
@@ -57,7 +57,7 @@
         "children": [
           {
             "type": "image",
-            "url": "https://picsum.photos/seed/n3/800/400",
+            "url": "https://i.pravatar.cc/200?img=47",
             "heightDp": 160,
             "contentDescription": "n3"
           },
