@@ -3,55 +3,62 @@
   "background": "#FAFAFA",
   "root": {
     "type": "column",
-    "padding": 16,
-    "spacing": 16,
+    "padding": 5,
+    "spacing": 5,
     "children": [
       {
-        "type": "row",
+        "type": "column",
         "card": true,
-        "padding": 16,
-        "spacing": 12,
-        "align": "center_vertical",
+        "padding": 5,
+        "spacing": 5,
         "children": [
           {
-            "type": "column",
-            "spacing": 6,
+            "type": "row",
+            "spacing": 5,
+            "align": "center_vertical",
             "children": [
-              { "type": "text", "text": "Юля Садовникова", "style": "title" },
-              { "type": "text", "text": "Lead QA Mobile", "style": "subtitle" }
+              {
+                "type": "column",
+                "spacing": 6,
+                "children": [
+                  { "type": "text", "text": "Юля Садовникова", "style": "title" },
+                  { "type": "text", "text": "Lead QA Mobile", "style": "subtitle" }
+                ]
+              },
+              {
+                "type": "image",
+                "url": "https://i.pravatar.cc/200?img=47",
+                "widthDp": 88,
+                "heightDp": 88,
+                "shape": "circle",
+                "contentDescription": "avatar"
+              }
             ]
           },
           {
-            "type": "image",
-            "url": "https://picsum.photos/seed/yulia/200/200",
-            "widthDp": 72,
-            "heightDp": 72,
-            "shape": "circle",
-            "contentDescription": "avatar"
+            "type": "row",
+            "spacing": 5,
+            "align": "center_vertical",
+            "children": [
+              { "type": "text", "text": "О себе", "style": "title" },
+              {
+                "type": "text",
+                "text": "Люблю чистые логи, быстрые прогоны и понятные баг-репорты. Развиваю направление мобильного тестирования и культуру качества в продуктовых командах."
+              }
+            ]
+          },
+          {
+            "type": "column",
+            "spacing": 5,
+            "align": "center_vertical",
+            "children": [
+              { "type": "text", "text": "Контакты", "style": "title" },
+              { "type": "text", "text": "📧  julia.solovkina@gmail.com" },
+              { "type": "text", "text": "💬  Telegram: @solovkina" },
+              { "type": "text", "text": "🐙  github.com/Sadovnikova" }
+            ]
           }
-        ]
-      },
-      {
-        "type": "column",
-        "card": true,
-        "padding": 16,
-        "spacing": 12,
-        "children": [
-          { "type": "text", "text": "О себе", "style": "subtitle" },
-          { "type": "text", "text": "Люблю чистые логи, быстрые прогоны и понятные баг-репорты. Развиваю направление мобильного тестирования и культуру качества в продуктовых командах." }
-        ]
-      },
-      {
-        "type": "column",
-        "card": true,
-        "padding": 16,
-        "spacing": 12,
-        "children": [
-          { "type": "text", "text": "Контакты", "style": "subtitle" },
-          { "type": "text", "text": "📧  julia.sadovnikova@example.com" },
-          { "type": "text", "text": "💬  Telegram: @yuliasadovnikova" },
-          { "type": "text", "text": "🐙  github.com/yuliasadovnikova" }
-        ]
+          ]
       }
     ]
   }
