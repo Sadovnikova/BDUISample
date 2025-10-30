@@ -12,11 +12,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Space
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
 import coil.load
 import com.google.android.material.R
+import com.example.bduisample.R as bduiR
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -44,12 +44,92 @@ class BDUIRenderer(
     }
 
     private fun productCard(node: Node.ViewNode.ProductCard): View {
+        // Внешняя карточка с тенью и скруглением
+        val card = androidx.cardview.widget.CardView(context).apply {
+            radius = dpF(16f)
+            cardElevation = dpF(8f)
+            setCardBackgroundColor(Color.WHITE)
+            useCompatPadding = true
+            preventCornerOverlap = true
+            val p = dp(12); setContentPadding(p, p, p, p)
+            layoutParams = LinearLayout.LayoutParams(
+                0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f
+            ).apply { setMargins(0, 0, 0, 0) }
+        }
+
+        // Контент карточки
+        val container = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+        }
+
+        // Картинка со скруглением
+        val img = ImageView(context).apply {
+            scaleType = ImageView.ScaleType.CENTER_CROP
+            layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, dp(120)
+            )
+            load(node.imageUrl)
+            clipToOutline = true
+            outlineProvider = object : ViewOutlineProvider() {
+                override fun getOutline(view: View, outline: Outline) {
+                    outline.setRoundRect(0, 0, view.width, view.height, dpF(12f))
+                }
+            }
+        }
+
+        // Заголовок
+        val title = TextView(context).apply {
+            text = node.title
+            textSize = 16f
+            setTextColor(Color.parseColor("#0D2B4D")) // тёмно-синий
+            setPadding(0, dp(10), 0, dp(6))
+        }
+
+        // Чип цены
+        val price = TextView(context).apply {
+            text = node.price
+            textSize = 14f
+            setPadding(dp(12), dp(8), dp(12), dp(8))
+            setTextColor(Color.parseColor("#0D2B4D"))
+            background = AppCompatResources.getDrawable(context, bduiR.drawable.bg_price_chip)
+        }
+
+        // Кнопка
+        val btn = com.google.android.material.button.MaterialButton(
+            ContextThemeWrapper(context, com.google.android.material.R.style.Widget_Material3_Button)
+        ).apply {
+            text = node.buttonText
+            setTextColor(Color.WHITE)
+            background = AppCompatResources.getDrawable(context, bduiR.drawable.bg_btn_pink) // розовый
+            layoutParams = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
+            ).apply { topMargin = dp(10) }
+            setOnClickListener {
+                it.animate().scaleX(0.98f).scaleY(0.98f).setDuration(80).withEndAction {
+                    it.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
+                }.start()
+                node.action?.let(onAction)
+            }
+        }
+
+        container.addView(img)
+        container.addView(title)
+        container.addView(price)
+        container.addView(btn)
+        card.addView(container)
+        return card
+    }
+
+    /*
+    private fun productCard(node: Node.ViewNode.ProductCard): View {
 
         //ВОТ СЮДА ВОТКНУТЬ КОД ИЗ ДЖЕПЕТЕ КОТОРЫЙ СВЕРСТАЕТ КАРТОЧКИ
 
         Toast.makeText(context, "Надо чтобы джепете нашкодил витрину", Toast.LENGTH_SHORT).show() /// УДАЛИТЬ СТРОЧКУ
         return View(context) // УДАЛИТЬ
     }
+
+    */
 
     private fun vertical(node: Node.ViewNode.Column): View {
         val ll = LinearLayout(context).apply {
@@ -125,7 +205,7 @@ class BDUIRenderer(
                         node.heightDp?.let { dp(it) } ?: dp(160)
                     )
 
-                    imageView.setImageResource(R.drawable.m3_split_button_chevron_avd)
+                    imageView.setImageResource(bduiR.drawable.avatar)
                 }
             )
         }
