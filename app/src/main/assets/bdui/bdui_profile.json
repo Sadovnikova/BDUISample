@@ -36,7 +36,7 @@
             ]
           },
           {
-            "type": "row",
+            "type": "column",
             "spacing": 5,
             "align": "center_vertical",
             "children": [

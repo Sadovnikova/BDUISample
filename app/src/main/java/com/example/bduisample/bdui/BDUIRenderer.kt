@@ -3,6 +3,7 @@ package com.example.bduisample.bdui
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Outline
+import android.graphics.drawable.BitmapDrawable
 import android.text.InputType
 import android.view.ContextThemeWrapper
 import android.view.View
@@ -72,19 +73,58 @@ class BDUIRenderer(
         }
     }
 
-    private fun image(node: Node.ViewNode.Image) = ImageView(context).apply {
-        scaleType = ImageView.ScaleType.CENTER_CROP
-        val w = node.widthDp?.let { dp(it) } ?: ViewGroup.LayoutParams.MATCH_PARENT
-        val h = node.heightDp?.let { dp(it) } ?: dp(160)
-        layoutParams = ViewGroup.LayoutParams(w, h)
-        load(node.url)
-        clipToOutline = true
-        outlineProvider = object : ViewOutlineProvider() {
+    private fun image(node: Node.ViewNode.Image): View {
+        val imageView = ImageView(context).apply {
+            scaleType = ImageView.ScaleType.CENTER_CROP
+            adjustViewBounds = true
+            clipToOutline = true
+        }
+
+        // Задаём временные layoutParams — пока не узнаем реальный размер
+        imageView.layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+
+        // Загружаем изображение с Coil и слушаем результат
+        imageView.load(node.url) {
+            listener(
+                onSuccess = { _, result ->
+                    val bmp = (result.drawable as? BitmapDrawable)?.bitmap
+                    if (bmp != null) {
+                        val width = bmp.width
+                        val height = bmp.height
+                        // Обновляем layoutParams на реальные размеры
+                        imageView.post {
+                            val params = imageView.layoutParams
+                            params.width = width
+                            params.height = height
+                            imageView.layoutParams = params
+                        }
+                    }
+                },
+                onError = { _, _ ->
+                    // fallback — если не удалось загрузить
+                    imageView.layoutParams = LinearLayout.LayoutParams(
+                        node.widthDp?.let { dp(it) } ?: ViewGroup.LayoutParams.MATCH_PARENT,
+                        node.heightDp?.let { dp(it) } ?: dp(160)
+                    )
+
+                    imageView.setImageResource(R.drawable.m3_split_button_chevron_avd)
+                }
+            )
+        }
+
+        // Добавляем скругление углов
+        imageView.outlineProvider = object : ViewOutlineProvider() {
             override fun getOutline(view: View, outline: Outline) {
                 outline.setRoundRect(0, 0, view.width, view.height, dpF(16f))
             }
         }
+
+        return imageView
     }
+
 
     private fun button(node: Node.ViewNode.Button) = MaterialButton(
         ContextThemeWrapper(context, R.style.Widget_Material3_Button)
