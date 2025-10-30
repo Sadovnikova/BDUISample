@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.example.bduisample.app-debug-35:/drawable_bg_card.xml.flat",
+        "source": "com.example.bduisample.app-main-37:/drawable/bg_card.xml"
+    },
+    {
+        "merged": "com.example.bduisample.app-debug-35:/drawable_bg_btn_pink.xml.flat",
+        "source": "com.example.bduisample.app-main-37:/drawable/bg_btn_pink.xml"
+    },
+    {
+        "merged": "com.example.bduisample.app-debug-35:/layout_activity_main.xml.flat",
+        "source": "com.example.bduisample.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.bduisample.app-debug-35:/drawable_bg_price_chip.xml.flat",
+        "source": "com.example.bduisample.app-main-37:/drawable/bg_price_chip.xml"
+    }
+]

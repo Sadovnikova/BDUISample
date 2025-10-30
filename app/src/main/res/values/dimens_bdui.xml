@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="bdui_card_radius">16dp</dimen>
+    <dimen name="bdui_card_elevation">4dp</dimen>
+</resources>

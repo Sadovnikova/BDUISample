@@ -1,0 +1,15 @@
+R_DEF: Internal format may change without notice
+local
+color bd_dark_blue
+color bd_pink
+color bd_pink_dark
+color bd_surface_tint
+dimen bdui_card_elevation
+dimen bdui_card_radius
+drawable bg_btn_pink
+drawable bg_card
+drawable bg_price_chip
+id bdui_container
+id toolbar
+layout activity_main
+style Widget.BDUI.Toolbar

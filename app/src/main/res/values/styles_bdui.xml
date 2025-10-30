@@ -1,0 +1,8 @@
+<resources>
+    <style name="Widget.BDUI.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="titleTextColor">@color/bd_dark_blue</item>
+        <item name="subtitleTextColor">@color/bd_dark_blue</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+</resources>

@@ -1,0 +1,33 @@
+{
+  "title": "Вход",
+  "background": "#FFFFFF",
+  "root": {
+    "type": "column",
+    "padding": 16,
+    "spacing": 12,
+    "children": [
+      {
+        "type": "text",
+        "text": "Вход в аккаунт",
+        "style": "title"
+      },
+      {
+        "type": "textField",
+        "hint": "Email"
+      },
+      {
+        "type": "textField",
+        "hint": "Пароль",
+        "inputType": "password"
+      },
+      {
+        "type": "button",
+        "text": "Войти",
+        "action": {
+          "type": "toast",
+          "message": "Авторизация..."
+        }
+      }
+    ]
+  }
+}

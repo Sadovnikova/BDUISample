@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bd_dark_blue">#0D2B4D</color>
+    <color name="bd_pink">#FF2D86</color>
+    <color name="bd_pink_dark">#E02474</color>
+    <color name="bd_surface_tint">#142E57</color>
+    <dimen name="bdui_card_elevation">4dp</dimen>
+    <dimen name="bdui_card_radius">16dp</dimen>
+    <style name="Widget.BDUI.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="titleTextColor">@color/bd_dark_blue</item>
+        <item name="subtitleTextColor">@color/bd_dark_blue</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+</resources>

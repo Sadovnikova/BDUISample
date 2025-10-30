@@ -1,0 +1,39 @@
+com.example.bduisample.test.app-jetified-kaspresso-1.5.3-0 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/063219b37507758558738058db066076/transformed/jetified-kaspresso-1.5.3/res
+com.example.bduisample.test.app-jetified-graphics-shapes-release-1 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/16a8c1e260f75860c3c7771be03fa332/transformed/jetified-graphics-shapes-release/res
+com.example.bduisample.test.app-appcompat-1.7.0-2 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/1aab6adfc8a981e6ad35c497979d968e/transformed/appcompat-1.7.0/res
+com.example.bduisample.test.app-material-1.13.0-3 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/1d43d8c20c34c482df8409c6e7f33587/transformed/material-1.13.0/res
+com.example.bduisample.test.app-coordinatorlayout-1.3.0-4 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/1e32948c559ca3fe68b8ae36bd810dfb/transformed/coordinatorlayout-1.3.0/res
+com.example.bduisample.test.app-jetified-emoji2-views-helper-1.3.0-5 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/20d4f898a55187864158636cc88e7752/transformed/jetified-emoji2-views-helper-1.3.0/res
+com.example.bduisample.test.app-jetified-core-ktx-1.13.1-6 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/350d442a1c982a74acd45c9d2da4cd36/transformed/jetified-core-ktx-1.13.1/res
+com.example.bduisample.test.app-lifecycle-livedata-2.7.0-7 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/3821867fd82b55d4c5dc1419678317b8/transformed/lifecycle-livedata-2.7.0/res
+com.example.bduisample.test.app-espresso-contrib-3.6.1-8 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/4e2e4f863aedbbfbe2912aa502c0e131/transformed/espresso-contrib-3.6.1/res
+com.example.bduisample.test.app-lifecycle-viewmodel-2.7.0-9 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/65e6d393e0796f6a1c9dab59031c855b/transformed/lifecycle-viewmodel-2.7.0/res
+com.example.bduisample.test.app-core-runtime-2.2.0-10 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/70ffb0698797162fae1ae2a221168537/transformed/core-runtime-2.2.0/res
+com.example.bduisample.test.app-fragment-1.5.4-11 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/71ae6b579c362d3e67000c16380d6d6d/transformed/fragment-1.5.4/res
+com.example.bduisample.test.app-jetified-activity-1.8.0-12 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/7211cb940415f4ce0c252833844f91af/transformed/jetified-activity-1.8.0/res
+com.example.bduisample.test.app-jetified-profileinstaller-1.3.1-13 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/721280ec47217393523f6aee735aea06/transformed/jetified-profileinstaller-1.3.1/res
+com.example.bduisample.test.app-jetified-appcompat-resources-1.7.0-14 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/7c98aa3695da33c581624e9de23a92b8/transformed/jetified-appcompat-resources-1.7.0/res
+com.example.bduisample.test.app-jetified-viewpager2-1.0.0-15 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/7f278e04f3ee34dd6c657935f7f06ae4/transformed/jetified-viewpager2-1.0.0/res
+com.example.bduisample.test.app-constraintlayout-2.1.0-16 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/82d85730fcdde6e1c841d5bb5c264d56/transformed/constraintlayout-2.1.0/res
+com.example.bduisample.test.app-dynamicanimation-1.1.0-17 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/89812caf7674c857a331dfe8eed909a6/transformed/dynamicanimation-1.1.0/res
+com.example.bduisample.test.app-transition-1.5.0-18 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/9211c0f87f72ca067e0b5279129f1617/transformed/transition-1.5.0/res
+com.example.bduisample.test.app-jetified-savedstate-1.2.1-19 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/995ebdd772a80d09132dcb825b2dbd07/transformed/jetified-savedstate-1.2.1/res
+com.example.bduisample.test.app-core-1.13.1-20 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/a0e50e76730e6c51c19dad802ab367e2/transformed/core-1.13.1/res
+com.example.bduisample.test.app-recyclerview-1.2.1-21 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/a3f79fd92fdab43e6fa71818812d535f/transformed/recyclerview-1.2.1/res
+com.example.bduisample.test.app-lifecycle-runtime-2.7.0-22 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/a4be94da7df5cbc151c6cfd201c178ed/transformed/lifecycle-runtime-2.7.0/res
+com.example.bduisample.test.app-jetified-emoji2-1.3.0-23 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/b6732526817875a77bb1cd53842df7fe/transformed/jetified-emoji2-1.3.0/res
+com.example.bduisample.test.app-lifecycle-livedata-core-2.7.0-24 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/bf605f1711a6c56e458b8f793883ac44/transformed/lifecycle-livedata-core-2.7.0/res
+com.example.bduisample.test.app-swiperefreshlayout-1.1.0-25 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/c8ee2b1b4a59b3611c1bcfe51c435657/transformed/swiperefreshlayout-1.1.0/res
+com.example.bduisample.test.app-jetified-annotation-experimental-1.4.1-26 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/ca89764463879c6e74b31ccb76d31149/transformed/jetified-annotation-experimental-1.4.1/res
+com.example.bduisample.test.app-drawerlayout-1.1.1-27 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/cf31a376f217122d6d8945cf94fd2305/transformed/drawerlayout-1.1.1/res
+com.example.bduisample.test.app-cardview-1.0.0-28 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/d65b73dac5948a91fe1f9ec4a3456154/transformed/cardview-1.0.0/res
+com.example.bduisample.test.app-jetified-startup-runtime-1.1.1-29 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/deb5cd343ebe0653b58db2ff189e5dc7/transformed/jetified-startup-runtime-1.1.1/res
+com.example.bduisample.test.app-jetified-core-1.6.1-30 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/e5199a9b95132a16ae2d8368a3559e9b/transformed/jetified-core-1.6.1/res
+com.example.bduisample.test.app-uiautomator-2.3.0-31 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/e521521fc882f7b139c1e2e2411ee57b/transformed/uiautomator-2.3.0/res
+com.example.bduisample.test.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-32 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/f06a798cd965e621533b7745ed7216e6/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/res
+com.example.bduisample.test.app-jetified-lifecycle-process-2.7.0-33 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/f93656d53fcd87262d68349e6e57db6e/transformed/jetified-lifecycle-process-2.7.0/res
+com.example.bduisample.test.app-jetified-lifecycle-livedata-core-ktx-2.7.0-34 /Users/julia/.gradle/caches/9.0-milestone-1/transforms/fcc1a8a5506d10b35cd8d812def718f2/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/res
+com.example.bduisample.test.app-androidTest-35 /Users/julia/Documents/BDUISample 2/app/build/generated/res/resValues/androidTest/debug
+com.example.bduisample.test.app-mergeDebugAndroidTestResources-36 /Users/julia/Documents/BDUISample 2/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.bduisample.test.app-mergeDebugAndroidTestResources-37 /Users/julia/Documents/BDUISample 2/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.bduisample.test.app-debugAndroidTest-38 /Users/julia/Documents/BDUISample 2/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
