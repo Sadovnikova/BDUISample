@@ -16,10 +16,10 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
 import coil.load
 import com.google.android.material.R
-import com.example.bduisample.R as bduiR
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.example.bduisample.R as bduiR
 
 class BDUIRenderer(
     private val context: Context,
@@ -63,19 +63,7 @@ class BDUIRenderer(
         }
 
         // Картинка со скруглением
-        val img = ImageView(context).apply {
-            scaleType = ImageView.ScaleType.CENTER_CROP
-            layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, dp(120)
-            )
-            load(node.imageUrl)
-            clipToOutline = true
-            outlineProvider = object : ViewOutlineProvider() {
-                override fun getOutline(view: View, outline: Outline) {
-                    outline.setRoundRect(0, 0, view.width, view.height, dpF(12f))
-                }
-            }
-        }
+        val img = renderImageView(node.imageUrl, null, null)
 
         // Заголовок
         val title = TextView(context).apply {
@@ -168,7 +156,9 @@ class BDUIRenderer(
         }
     }
 
-    private fun image(node: Node.ViewNode.Image): View {
+    private fun image(node: Node.ViewNode.Image): View = renderImageView(node.url, node.widthDp, node.heightDp)
+
+    private fun renderImageView(url: String, widthDp: Int?, heightDp: Int?): View {
         val imageView = ImageView(context).apply {
             scaleType = ImageView.ScaleType.CENTER_CROP
             adjustViewBounds = true
@@ -182,14 +172,14 @@ class BDUIRenderer(
         )
 
         // Загружаем изображение с Coil и слушаем результат
-        imageView.load(node.url) {
+        imageView.load(url) {
             listener(
                 onSuccess = { _, result ->
 //                    val bmp = (result.drawable as? BitmapDrawable)?.bitmap
 //                    if (bmp != null) {
 //                        val width = bmp.width
 //                        val height = bmp.height
-                        // Обновляем layoutParams на реальные размеры
+                    // Обновляем layoutParams на реальные размеры
 //                        imageView.post {
 //                            val params = imageView.layoutParams
 //                            params.width = node.widthDp ?: 0
@@ -197,12 +187,17 @@ class BDUIRenderer(
 //                            imageView.layoutParams = params
 //                        }
 //                    }
+
+                    /**
+                     * Если мы вдруг не доверяем сетке - то лучше просто раскоментить строку ниже: будет брать из файлов
+                     */
+                  //  imageView.setImageResource(bduiR.drawable.avatar)
                 },
                 onError = { _, _ ->
                     // fallback — если не удалось загрузить
                     imageView.layoutParams = LinearLayout.LayoutParams(
-                        node.widthDp?.let { dp(it) } ?: ViewGroup.LayoutParams.MATCH_PARENT,
-                        node.heightDp?.let { dp(it) } ?: dp(160)
+                        widthDp?.let { dp(it) } ?: ViewGroup.LayoutParams.MATCH_PARENT,
+                        heightDp?.let { dp(it) } ?: dp(160)
                     )
 
                     imageView.setImageResource(bduiR.drawable.avatar)
@@ -219,7 +214,6 @@ class BDUIRenderer(
 
         return imageView
     }
-
 
     private fun button(node: Node.ViewNode.Button) = MaterialButton(
         ContextThemeWrapper(context, R.style.Widget_Material3_Button)

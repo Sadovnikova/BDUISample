@@ -43,7 +43,7 @@
           {
             "type": "productCard",
             "imageUrl": "https://picsum.photos/seed/s4/800/600",
-            "title": "Набор трубочек",
+            "title": "Набор трубочек 2 шт",
             "price": "390 ₽",
             "buttonText": "Купить",
             "action": { "type": "toast", "message": "Добавлено в корзину" }
