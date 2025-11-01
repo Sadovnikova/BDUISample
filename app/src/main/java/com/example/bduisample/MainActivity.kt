@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         renderer = BDUIRenderer(this) { action ->
             when (action.type) {
                 "toast" -> {
-                    Toast.makeText(this, action.message.orEmpty(), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, action.message.orEmpty(), Toast.LENGTH_LONG).show()
                 }
 
                 "open_mock" -> {

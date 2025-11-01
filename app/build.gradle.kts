@@ -4,7 +4,9 @@ plugins {
   id("com.android.application")
   id("org.jetbrains.kotlin.android")
   id("org.jetbrains.kotlin.plugin.serialization")
+  id("app.cash.paparazzi") version "1.3.1"
 }
+
 android {
   namespace = "com.example.bduisample"
   compileSdk = 35
@@ -36,4 +38,5 @@ dependencies {
   androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
   androidTestImplementation("com.kaspersky.android-components:kaspresso:1.5.3")
   androidTestImplementation("io.github.kakaocup:kakao:3.6.0")
+  testImplementation("app.cash.paparazzi:paparazzi:1.3.1")
 }

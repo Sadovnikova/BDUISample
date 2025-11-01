@@ -44,7 +44,7 @@ class BDUIRenderer(
     }
 
     private fun productCard(node: Node.ViewNode.ProductCard): View {
-        // Внешняя карточка с тенью и скруглением
+        //Внешняя карточка с тенью и скруглением
         val card = androidx.cardview.widget.CardView(context).apply {
             radius = dpF(16f)
             cardElevation = dpF(8f)
@@ -107,17 +107,6 @@ class BDUIRenderer(
         card.addView(container)
         return card
     }
-
-    /*
-    private fun productCard(node: Node.ViewNode.ProductCard): View {
-
-        //ВОТ СЮДА ВОТКНУТЬ КОД ИЗ ДЖЕПЕТЕ КОТОРЫЙ СВЕРСТАЕТ КАРТОЧКИ
-
-        Toast.makeText(context, "Надо чтобы джепете нашкодил витрину", Toast.LENGTH_SHORT).show() /// УДАЛИТЬ СТРОЧКУ
-        return View(context) // УДАЛИТЬ
-    }
-
-    */
 
     private fun vertical(node: Node.ViewNode.Column): View {
         val ll = LinearLayout(context).apply {

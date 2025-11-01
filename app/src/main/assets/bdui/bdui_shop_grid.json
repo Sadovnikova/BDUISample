@@ -23,7 +23,7 @@
             "imageUrl": "https://picsum.photos/seed/s2/800/600",
             "title": "Фитнес-бутылка 700 мл",
             "price": "790 ₽",
-            "buttonText": "Купить",
+            "buttonText": "Не ПОКУПАТЬ",
             "action": { "type": "toast", "message": "Добавлено в корзину" }
           }
         ]
